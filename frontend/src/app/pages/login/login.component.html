@@ -1,0 +1,22 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Iniciar sesión</mat-card-title>
+      <mat-card-subtitle>Ingrese sus datos</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <small style="color: red" *ngIf="error">Credenciales erroneas.</small>
+      <form (ngSubmit)="submitForm()" [formGroup]="loginForm">
+        <mat-form-field>
+            <mat-label>Usuario</mat-label>
+            <input matInput formControlName="email" placeholder="Usuario" required autocomplete="off">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Contraseña</mat-label>
+            <input matInput [type]="'password'" formControlName="password" required autocomplete="off">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" [disabled]="!loginForm.valid">Iniciar sesión</button>
+      </form>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" 
+        aria-label="Example icon-button with menu icon" (click)="toggle(drawer)">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span><a href="" routerLink="/" mat-button>Loopsy</a></span>
+</mat-toolbar>
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="loggedIn">
+        <mat-nav-list>
+            <mat-selection-list #options [multiple]="false">
+                <p style="padding: 5px;">
+                   Bienvenido usuario al Sistema Loopsy.
+                </p>
+                <mat-list-option routerLink="/users">
+                    Gestionar usuarios
+                </mat-list-option>
+                <mat-list-option (click)="logout()">
+                    LOGOUT
+                </mat-list-option>
+            </mat-selection-list>
+        </mat-nav-list>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+        <router-outlet></router-outlet>
+    </div>
+  
+  </mat-drawer-container>

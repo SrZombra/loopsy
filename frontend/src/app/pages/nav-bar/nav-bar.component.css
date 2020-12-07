@@ -1,0 +1,20 @@
+.example-container {
+    width: 100%;
+    min-height: 100%;
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    padding: 2%;
+    /* justify-content: center; */
+  }
+  
+  .example-sidenav {
+    /* transform: none !important;
+    visibility: visible !important; */
+    min-width: 13%;
+  }
+
+  ::ng-deep .parametersPanel .mat-expansion-panel-body {
+    padding: 0;
+}
