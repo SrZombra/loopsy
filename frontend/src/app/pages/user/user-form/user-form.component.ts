@@ -59,7 +59,7 @@ export class UserFormComponent implements OnInit {
 
   submitUser(){
     this.Swal.loading();
-    if(this.userForm.value.id !== ''){
+    if(this.userForm.controls['id'].value){
       this.UserApi.updateUser(this.userForm.value).subscribe(
         data => this.handleResponseCreate(data),
         err => this.Swal.error(err)

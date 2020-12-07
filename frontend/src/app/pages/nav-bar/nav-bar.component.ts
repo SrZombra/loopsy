@@ -18,7 +18,8 @@ export class NavBarComponent implements OnInit {
 
   public loggedIn: boolean;
   public routes: Routes[] = [
-    { name: 'USUARIOS', route: '/users' }
+    { name: 'USUARIOS', route: '/users' },
+    { name: 'PRODUCTOS', route: '/products' },
   ]
 
   constructor(

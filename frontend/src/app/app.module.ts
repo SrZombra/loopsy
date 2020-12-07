@@ -9,6 +9,9 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {DemoMaterialModule} from './material-module';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 
+// File Upload
+
+
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -21,6 +24,8 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive'; // this includes the core NgIdleModule but includes keepalive providers for easy wireup
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { UserFormComponent } from './pages/user/user-form/user-form.component';
+import { ProductsComponent } from './pages/product/products/products.component';
+import { ProductFormComponent } from './pages/product/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,9 @@ import { UserFormComponent } from './pages/user/user-form/user-form.component';
     HomeComponent,
     LoginComponent,
     UsersComponent,
-    UserFormComponent
+    UserFormComponent,
+    ProductsComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +47,7 @@ import { UserFormComponent } from './pages/user/user-form/user-form.component';
     DemoMaterialModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    NgIdleKeepaliveModule.forRoot()
+    NgIdleKeepaliveModule.forRoot(),
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },

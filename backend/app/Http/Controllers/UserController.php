@@ -61,7 +61,7 @@ class UserController extends Controller
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'password' => Hash::make($request->get('password')),
-            'rol_id' => $request->get('rol_id'),
+            'rol_id' => $request->rol_id['id'],
             'estado_id' => $request->get('estado_id'),
         ]);
 
@@ -69,26 +69,27 @@ class UserController extends Controller
     }
 
     public function getUsers(){
-        $user = User::all()->where('estado_id', 1);
-
+        $user = User::with('rol_id', 'estado_id')->where('estado_id', 1)->get();
         return response()->json($user, 201);
     }
 
     public function getUser(Request $request){
-        $user = User::find($request->id);
+        $user = User::with('rol_id', 'estado_id')->find($request->id);
 
         return response()->json($user, 201);
     }
 
     public function updateUser(Request $request){
+
         $user = User::find($request->id);
 
         $user->name = $request->name;
-        $user->rol_id = $request->rol_id;
+        $user->rol_id = $request->rol_id['id'];
 
         $user->save();
 
         return response()->json($user, 201);
+
     }
 
 

@@ -1,35 +1,38 @@
-  
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Title } from '@angular/platform-browser';
-import { UserModule } from 'src/app/models/user/user.module';
+import { ProductsModule } from 'src/app/models/products/products.module';
+import { ProductsService } from 'src/app/services/products/products.service';
 import { SwalService } from 'src/app/services/swal/swal.service';
-import { UserApiService } from 'src/app/services/user/user-api.service';
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.css']
 })
-export class UsersComponent implements OnInit {
+export class ProductsComponent implements OnInit {
 
-  public data: UserModule[];
+  public data: ProductsModule[];
 
   ngOnInit(){
     this.loadUsers();
-    this.titleService.setTitle('Loopsy - Gestión de Usuarios');
+    this.titleService.setTitle('Loopsy - Gestión de Productos');
   }
 
-  displayedColumns: string[] = ['id', 'name', 'email', 'profile', 'action'];
-  dataSource: MatTableDataSource<UserModule>;
+  displayedColumns: string[] = [
+    'id', 'nombre_producto', 'cantidad', 'catalogo', 'categoria',
+    'descripcion', 'descuento', 'precio_unitario',
+    'dato_medida', 'unidad_medida', 'bodega', 'action'
+  ];
+  dataSource: MatTableDataSource<ProductsModule>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(
-    private UserApi: UserApiService,
+    private ProductService: ProductsService,
     private Swal: SwalService,
     private titleService: Title
   ) {
@@ -53,13 +56,13 @@ export class UsersComponent implements OnInit {
 
   loadUsers(){
     this.Swal.loading();
-    this.UserApi.loadUsers().subscribe(
+    this.ProductService.loadProducts().subscribe(
       data => this.handleResponse(data),
       err => this.Swal.error(err)
     );
   }
 
-  handleResponse(users: UserModule[]){
+  handleResponse(users: ProductsModule[]){
     this.Swal.closeSwal();    
     this.dataSource.data = users;
   }

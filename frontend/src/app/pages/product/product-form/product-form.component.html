@@ -1,0 +1,56 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>
+            Registro de producto
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form action="" [formGroup]="productForm" class="Form" (ngSubmit)="submitProduct()">
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Nombre del producto</mat-label>
+                <input matInput formControlName="nombre_producto" placeholder="Nombre del producto" required autocomplete="off">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Categoria</mat-label>
+                <mat-select formControlName="categoria" [compareWith]="compareSelect">
+                  <mat-option *ngFor="let categoria of basicData.categorias" [value]="categoria">{{ categoria.nombre }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Catalogo</mat-label>
+                <mat-select formControlName="catalogo" [compareWith]="compareSelect">
+                  <mat-option *ngFor="let catalogo of basicData.catalogos" [value]="catalogo">{{ catalogo.nombre_catalogo }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Descuento</mat-label>
+                <mat-select formControlName="descuento" [compareWith]="compareSelect">
+                  <mat-option *ngFor="let descuento of basicData.descuentos" [value]="descuento">{{ descuento.porcentaje }}%</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Unidad de Medida</mat-label>
+                <mat-select formControlName="unidad_medida" [compareWith]="compareSelect">
+                  <mat-option *ngFor="let unidad_medida of basicData.unidades_medida" [value]="unidad_medida">{{ unidad_medida.nombre }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Bodega</mat-label>
+                <mat-select formControlName="bodega" [compareWith]="compareSelect">
+                  <mat-option *ngFor="let bodega of basicData.bodegas" [value]="bodega">{{ bodega.direccion_bodega }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br>
+            <label for="">Subir imagenes al producto</label><br>
+            <input type="file" #UploadFileInput multiple (change)="loadImage($event)">
+            <br>
+            <br>
+            <button mat-raised-button color="primary" [disabled]="!productForm.valid">
+                Guardar
+            </button>
+            <button mat-raised-button color="accent" routerLink="/users">
+                Volver
+            </button>
+        </form>
+    </mat-card-content>
+</mat-card>

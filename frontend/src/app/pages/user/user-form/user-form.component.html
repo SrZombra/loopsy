@@ -16,8 +16,8 @@
             </mat-form-field>
             <mat-form-field appearance="outline" class="example-full-width">
                 <mat-label>Rol</mat-label>
-                <mat-select formControlName="rol_id">
-                  <mat-option *ngFor="let rol of roles" [value]="rol.id">{{ rol.nombre }}</mat-option>
+                <mat-select formControlName="rol_id" [compareWith]="compareSelect">
+                  <mat-option *ngFor="let rol of roles" [value]="rol">{{ rol.nombre }}</mat-option>
                 </mat-select>
               </mat-form-field>
             <mat-form-field *ngIf="!this.userForm.controls['id'].value" appearance="outline" class="example-full-width">

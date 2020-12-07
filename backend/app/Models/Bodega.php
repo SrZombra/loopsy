@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Roles extends Model
+class Bodega extends Model
 {
     use HasFactory;
 
@@ -14,7 +14,7 @@ class Roles extends Model
      *
      * @var string
      */
-    protected $table = 'rol';
+    protected $table = 'bodega';
 
     /**
      * The primary key associated with the table.
@@ -22,9 +22,5 @@ class Roles extends Model
      * @var string
      */
     protected $primaryKey = 'id';
-
-    public function user()
-    {
-        return $this->belongsTo('App\User', 'id');
-    }
+    
 }
