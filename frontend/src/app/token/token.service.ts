@@ -18,8 +18,8 @@ export class TokenService {
 
   public baseUrl = url.url;
   private iss = {
-    login: `${this.baseUrl}/login`,
-    signup: `${this.baseUrl}/register`
+    login: `${this.baseUrl}/NEUgbYOtO8DvjfEmfXHu`,
+    signup: `${this.baseUrl}/vuzjzJ7mrGkVeA9EZeFU`
   };
   timeout: number;
   tokenSubscription = new Subscription();
@@ -34,8 +34,6 @@ export class TokenService {
   }
 
   processIdle(){
-    console.log(new Date());
-    
     this.idle.setIdle(180);
 
     this.idle.setTimeout(5);
@@ -74,13 +72,7 @@ export class TokenService {
   }
 
   remove() {
-    console.log(new Date());
-    
     this.idle.stop();
-    var header = {
-      headers: new HttpHeaders()
-        .set('Authorization',  `Bearer `+this.get())
-    }
     localStorage.removeItem('token');
     // this.http.post(`${this.baseUrl}/logout`, [], header).subscribe();
   }

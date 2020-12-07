@@ -4,6 +4,11 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/token/auth.service';
 import { TokenService } from 'src/app/token/token.service';
 
+class Routes{
+  name: string;
+  route: string;
+}
+
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -12,6 +17,9 @@ import { TokenService } from 'src/app/token/token.service';
 export class NavBarComponent implements OnInit {
 
   public loggedIn: boolean;
+  public routes: Routes[] = [
+    { name: 'USUARIOS', route: '/users' }
+  ]
 
   constructor(
     private router: Router,

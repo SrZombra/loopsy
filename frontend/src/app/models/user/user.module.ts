@@ -11,17 +11,19 @@ import { CommonModule } from '@angular/common';
 })
 export class UserModule { 
 
-  public usuario: string;
-  public contrasena: string;
-  public estado: number;
-  public correo_electronico: string;
+  public id: number;
+  public name: string;
+  public email: string;
+  public password: string;
+  public password_confirmation: string;
+  public estado_id: number;
   public rol_id: number;
 
   constructor(){
-    this.usuario = '';
-    this.contrasena = '';
-    this.estado = 0;
-    this.correo_electronico = '';
+    this.email = '';
+    this.password = '';
+    this.password_confirmation = '';
+    this.estado_id = 0;
     this.rol_id = 0;
   }
 

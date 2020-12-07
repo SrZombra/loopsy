@@ -20,6 +20,7 @@ import { UsersComponent } from './pages/users/users/users.component';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive'; // this includes the core NgIdleModule but includes keepalive providers for easy wireup
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { UserFormComponent } from './pages/user/user-form/user-form.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     NavBarComponent,
     HomeComponent,
     LoginComponent,
-    UsersComponent
+    UsersComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule,

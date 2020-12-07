@@ -2,3 +2,9 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+input:-internal-autofill-selected{
+    background-color: transparent !important;
+}
+.mat-raised-button{ margin: 0 5px 0 0 !important; }
+.mat-toolbar{ color: white !important }

@@ -6,12 +6,12 @@
     <mat-card-content>
       <small style="color: red" *ngIf="error">Credenciales erroneas.</small>
       <form (ngSubmit)="submitForm()" [formGroup]="loginForm">
-        <mat-form-field>
+        <mat-form-field appearance="outline">
             <mat-label>Usuario</mat-label>
             <input matInput formControlName="email" placeholder="Usuario" required autocomplete="off">
         </mat-form-field>
         <br>
-        <mat-form-field>
+        <mat-form-field appearance="outline">
             <mat-label>Contraseña</mat-label>
             <input matInput [type]="'password'" formControlName="password" required autocomplete="off">
         </mat-form-field>

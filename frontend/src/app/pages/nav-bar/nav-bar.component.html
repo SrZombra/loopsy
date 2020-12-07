@@ -12,13 +12,25 @@
                 <p style="padding: 5px;">
                    Bienvenido usuario al Sistema Loopsy.
                 </p>
-                <mat-list-option routerLink="/users">
-                    Gestionar usuarios
+                <mat-list-option *ngFor="let route of routes" routerLink="{{ route.route }}">
+                    {{ route.name }}
                 </mat-list-option>
                 <mat-list-option (click)="logout()">
                     LOGOUT
                 </mat-list-option>
             </mat-selection-list>
+            <mat-accordion>
+                <mat-expansion-panel class="parametersPanel">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                        Parametros
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-selection-list #options2 [multiple]="false">
+                            <mat-list-option> Roles </mat-list-option>
+                    </mat-selection-list>
+                </mat-expansion-panel>
+            </mat-accordion>
         </mat-nav-list>
     </mat-drawer>
   

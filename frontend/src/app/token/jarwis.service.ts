@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, Type } from '@angular/core';
-import { Observable } from 'rxjs';
 import * as url from '../services/baseUrl.js';
 
 @Injectable({
@@ -14,7 +13,7 @@ export class JarwisService {
   constructor(private http: HttpClient) { }
 
   login(data) {
-    return this.http.post(`${this.baseUrl}/login`, data);
+    return this.http.post(`${this.baseUrl}/NEUgbYOtO8DvjfEmfXHu`, data);
   }
 
 }
