@@ -8,3 +8,4 @@ input:-internal-autofill-selected{
 }
 .mat-raised-button{ margin: 0 5px 0 0 !important; }
 .mat-toolbar{ color: white !important }
+.mat-form-field{ margin-left: 5px; }

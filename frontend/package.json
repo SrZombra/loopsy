@@ -24,6 +24,7 @@
     "@auth0/angular-jwt": "^5.0.2",
     "@ng-idle/core": "^10.0.0-beta.1",
     "@ng-idle/keepalive": "^10.0.0-beta.1",
+    "@ngbmodule/material-carousel": "^0.7.1",
     "idle": "0.0.0",
     "rxjs": "~6.6.0",
     "sweetalert2": "^10.12.0",

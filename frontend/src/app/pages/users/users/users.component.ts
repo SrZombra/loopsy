@@ -19,7 +19,7 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(){
     this.loadUsers();
-    this.titleService.setTitle('Loopsy - Gestión de Usuarios');
+    this.titleService.setTitle('Loopsy | Gestión de Usuarios');
   }
 
   displayedColumns: string[] = ['id', 'name', 'email', 'profile', 'action'];

@@ -15,6 +15,9 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('/Dx5muDeFg3JicHbFuRMU', [ProductoController::class, 'getProductos']);
     Route::get('/kCRDuPRcMY8FhuGeReSQ', [ProductoController::class, 'basicData']);
     Route::post('/c180tfxoLcWRTeYVRQpY', [ProductoController::class, 'createProduct']);
+    Route::post('/QGL2hflAN8PnDl1AX75t', [ProductoController::class, 'getProduct']);
+    Route::post('/A6EAKJzdf4cmgrP0o0zN', [ProductoController::class, 'updateProduct']);
+    Route::post('/eetcVaoyhbeUUTKlgukm', [ProductoController::class, 'deleteProductImage']);
 
     Route::get('/ctwSTeTSOHVOf0dfjfoi', [RolesController::class, 'getRoles']);
 });

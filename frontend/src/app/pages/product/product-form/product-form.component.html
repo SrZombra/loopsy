@@ -11,6 +11,22 @@
                 <input matInput formControlName="nombre_producto" placeholder="Nombre del producto" required autocomplete="off">
             </mat-form-field>
             <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Medidas</mat-label>
+                <input matInput formControlName="dato_medida" placeholder="Medidas" required autocomplete="off">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Precio de Unidad</mat-label>
+                <input matInput formControlName="precio_unitario" placeholder="Precio Unidad" required autocomplete="off">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Cantidad</mat-label>
+                <input matInput formControlName="cantidad" placeholder="Cantidad del Producto" required autocomplete="off">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Descripción del producto</mat-label>
+                <textarea matInput formControlName="descripcion" placeholder="Ejemplo: Este producto tiene disponible colores: "></textarea>
+              </mat-form-field>
+            <mat-form-field appearance="outline" class="example-full-width">
                 <mat-label>Categoria</mat-label>
                 <mat-select formControlName="categoria" [compareWith]="compareSelect">
                   <mat-option *ngFor="let categoria of basicData.categorias" [value]="categoria">{{ categoria.nombre }}</mat-option>
@@ -41,16 +57,42 @@
                 </mat-select>
             </mat-form-field>
             <br>
-            <label for="">Subir imagenes al producto</label><br>
-            <input type="file" #UploadFileInput multiple (change)="loadImage($event)">
+            <label for="">Subir imagenes del producto</label><br>
+            <input type="file" #UploadFileInput multiple (change)="loadImage($event)" formControlName="image">
             <br>
             <br>
             <button mat-raised-button color="primary" [disabled]="!productForm.valid">
                 Guardar
             </button>
-            <button mat-raised-button color="accent" routerLink="/users">
+            <button mat-raised-button color="accent" routerLink="/products">
                 Volver
             </button>
         </form>
+        <h1>Imagenes del producto.</h1>
+        <mat-carousel
+            timings="250ms ease-in"
+            [autoplay]="false"
+            interval="5000"
+            color="primary"
+            maxWidth="'auto'"
+            proportion="25"
+            [loop]="true"
+            [hideArrows]="false"
+            [hideIndicators]="false"
+            [useKeyboard]="true"
+            [useMouseWheel]="false"
+            orientation="ltr"
+        >
+            <mat-carousel-slide 
+                *ngFor="let slide of slides; let i = index"
+                [image]="urlToImage(slide.url_imagen)"
+                overlayColor="#00000010"
+                [hideOverlay]="false"
+            >
+            <button mat-icon-button style="color: red;" aria-label="Example icon button with a vertical three dot icon" (click)="askDelete(slide)">
+                <mat-icon>delete_forever</mat-icon>
+            </button>
+        </mat-carousel-slide>
+        </mat-carousel>
     </mat-card-content>
 </mat-card>

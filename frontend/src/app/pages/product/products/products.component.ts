@@ -7,6 +7,11 @@ import { ProductsModule } from 'src/app/models/products/products.module';
 import { ProductsService } from 'src/app/services/products/products.service';
 import { SwalService } from 'src/app/services/swal/swal.service';
 
+class Routes{
+  name: string;
+  route: string;
+}
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -18,13 +23,22 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(){
     this.loadUsers();
-    this.titleService.setTitle('Loopsy - Gestión de Productos');
+    this.titleService.setTitle('Loopsy | Gestión de Productos');
   }
+
+  public routesParameters: Routes[] = [
+    { name: 'Roles', route: '/users' },
+    { name: 'Categorias', route: '/products' },
+    { name: 'Catalogos', route: '/products' },
+    { name: 'Bodegas', route: '/products' },
+    { name: 'Unidades medida', route: '/products' },
+    { name: 'Descuentos', route: '/products' },
+  ]
 
   displayedColumns: string[] = [
     'id', 'nombre_producto', 'cantidad', 'catalogo', 'categoria',
     'descripcion', 'descuento', 'precio_unitario',
-    'dato_medida', 'unidad_medida', 'bodega', 'action'
+    'dato_medida', 'bodega', 'action'
   ];
   dataSource: MatTableDataSource<ProductsModule>;
 

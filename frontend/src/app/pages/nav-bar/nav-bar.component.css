@@ -18,3 +18,7 @@
   ::ng-deep .parametersPanel .mat-expansion-panel-body {
     padding: 0;
 }
+
+.mat-selection-list{
+  padding: 0;
+}

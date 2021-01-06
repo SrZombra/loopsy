@@ -15,9 +15,6 @@
                 <mat-list-option *ngFor="let route of routes" routerLink="{{ route.route }}">
                     {{ route.name }}
                 </mat-list-option>
-                <mat-list-option (click)="logout()">
-                    LOGOUT
-                </mat-list-option>
             </mat-selection-list>
             <mat-accordion>
                 <mat-expansion-panel class="parametersPanel">
@@ -26,11 +23,16 @@
                         Parametros
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <mat-selection-list #options2 [multiple]="false">
-                            <mat-list-option> Roles </mat-list-option>
+                    <mat-selection-list #options2 [multiple]="false" *ngFor="let routeParameter of routesParameters" routerLink="{{ routeParameter.route }}">
+                            <mat-list-option> {{ routeParameter.name }} </mat-list-option>
                     </mat-selection-list>
                 </mat-expansion-panel>
             </mat-accordion>
+            <mat-selection-list #options3 [multiple]="false">
+                <mat-list-option (click)="logout()">
+                    LOGOUT
+                </mat-list-option>
+            </mat-selection-list>
         </mat-nav-list>
     </mat-drawer>
   

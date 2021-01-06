@@ -10,7 +10,7 @@ import {DemoMaterialModule} from './material-module';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 
 // File Upload
-
+import { MatCarouselModule } from '@ngbmodule/material-carousel';
 
 
 // Componentes
@@ -48,6 +48,7 @@ import { ProductFormComponent } from './pages/product/product-form/product-form.
     MatNativeDateModule,
     ReactiveFormsModule,
     NgIdleKeepaliveModule.forRoot(),
+    MatCarouselModule.forRoot(),
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },

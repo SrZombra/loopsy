@@ -21,3 +21,43 @@ td, th {
 .example-button-row{
     display: inline-flex;
 }
+
+.mat-column-cantidad{
+    width: 4%;
+}
+
+.mat-column-id{
+    width: 4%;
+}
+
+.mat-column-nombre_producto{
+    width: 9%;
+}
+
+.mat-column-catalogo{
+    width: 9%;
+}
+
+.mat-column-categoria{
+    width: 9%;
+}
+
+.mat-column-descripcion{
+    width: 20%;
+}
+
+.mat-column-descuento{
+    width: 9%;
+}
+
+.mat-column-precio_unitario{
+    width: 9%;
+}
+
+.mat-column-dato_medida{
+    width: 15%;
+}
+
+.mat-column-bodega{
+    width: 9%;
+}

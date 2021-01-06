@@ -10,6 +10,15 @@ class Producto extends Model
     use HasFactory;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'nombre_producto', 'dato_medida', 'precio_unitario', 'cantidad', 'descripcion', 'bodega', 'catalogo', 'categoria', 'descuento', 'unidad_medida'
+    ];
+
+    /**
      * The table associated with the model.
      *
      * @var string
@@ -24,23 +33,23 @@ class Producto extends Model
     protected $primaryKey = 'id';
 
     public function categoria(){
-        return $this->hasOne('App\Models\Categoria', 'id_categoria', 'CATEGORIA_id_categoria');
+        return $this->hasOne('App\Models\Categoria', 'id_categoria', 'categoria');
     }
 
     public function catalogo(){
-        return $this->hasOne('App\Models\Catalogo', 'id', 'CATALOGO_id');
+        return $this->hasOne('App\Models\Catalogo', 'id', 'catalogo');
     }
 
     public function bodega(){
-        return $this->hasOne('App\Models\Bodega', 'id', 'BODEGA_id');
+        return $this->hasOne('App\Models\Bodega', 'id', 'bodega');
     }
 
     public function unidadMedida(){
-        return $this->hasOne('App\Models\UnidadMedida', 'id', 'unidad_medida_id');
+        return $this->hasOne('App\Models\UnidadMedida', 'id', 'unidad_medida');
     }
 
     public function descuento(){
-        return $this->hasOne('App\Models\Descuento', 'id', 'DESCUENTO_id');
+        return $this->hasOne('App\Models\Descuento', 'id', 'descuento');
     }
 
 }
