@@ -27,7 +27,6 @@ export class ProductsComponent implements OnInit {
   }
 
   public routesParameters: Routes[] = [
-    { name: 'Roles', route: '/users' },
     { name: 'Categorias', route: '/products' },
     { name: 'Catalogos', route: '/products' },
     { name: 'Bodegas', route: '/products' },

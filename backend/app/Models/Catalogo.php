@@ -10,6 +10,15 @@ class Catalogo extends Model
     use HasFactory;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'nombre_catalogo', 'descripcion', 'estado'
+    ];
+
+    /**
      * The table associated with the model.
      *
      * @var string

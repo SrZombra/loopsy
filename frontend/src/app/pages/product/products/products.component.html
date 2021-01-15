@@ -14,7 +14,7 @@
         <a href="" mat-raised-button color="primary" style="float: right;" routerLink="/product/create">Agregar Nuevo</a>
         <mat-menu #menu="matMenu">
             <button mat-menu-item *ngFor="let routesParameter of routesParameters" routerLink="{{ routesParameter.route }}">
-              <mat-icon>dialpad</mat-icon>
+              <mat-icon>perm_data_setting</mat-icon>
               <span>{{ routesParameter.name }}</span>
             </button>
         </mat-menu>
