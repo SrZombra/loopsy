@@ -22,5 +22,13 @@ class Bodega extends Model
      * @var string
      */
     protected $primaryKey = 'id';
+
+    protected $hidden = [
+        'TIPO_BODEGA_id'
+    ];
+
+    public function tipo(){
+        return $this->hasOne('App\Models\TipoBodega', 'id', 'TIPO_BODEGA_id');
+    }
     
 }

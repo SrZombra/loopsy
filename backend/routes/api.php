@@ -5,6 +5,7 @@ use App\Http\Controllers\RolesController;
 use App\Http\Controllers\CatalogoController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\BodegaController;
 
 Route::post('/NEUgbYOtO8DvjfEmfXHu', [UserController::class, 'authenticate']);
 
@@ -21,13 +22,15 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('/A6EAKJzdf4cmgrP0o0zN', [ProductoController::class, 'updateProduct']);
     Route::post('/eetcVaoyhbeUUTKlgukm', [ProductoController::class, 'deleteProductImage']);
 
-    Route::post('/VlaDKnSloeQf1OZ5T8VI', [ CatalogoController::class, 'getCatalogos' ]);
+    Route::get('/VlaDKnSloeQf1OZ5T8VI', [ CatalogoController::class, 'getCatalogos' ]);
     Route::post('/shsabfGoSXsVg88PKRr7', [ CatalogoController::class, 'createCatalogo' ]);
     Route::post('/OmXQy8ACoUZEK6CDFWzI', [ CatalogoController::class, 'updateCatalogo' ]);
         
     Route::get('/X6QE0A9pOy9NvfKqEPK8', [ CategoriaController::class, 'getCategorias' ]);
     Route::post('/g1SuieMPJ8VC5xdhKgRG', [ CategoriaController::class, 'createCategoria' ]);
     Route::post('/8hdNP4KTDz8IID5wbj53', [ CategoriaController::class, 'updateCategoria' ]);
+    
+    Route::get('/DVv7FIl5dM69C318bPgd', [ BodegaController::class, 'getBodegas' ]);
 
     Route::get('/ctwSTeTSOHVOf0dfjfoi', [RolesController::class, 'getRoles']);
 });
