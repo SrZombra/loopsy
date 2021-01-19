@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bodega;
-use App\Http\Request\BodegaRequest;
+use App\Http\Requests\BodegaRequest;
 
 class BodegaController extends Controller
 {
@@ -24,7 +24,7 @@ class BodegaController extends Controller
         $data = Bodega::create([
             'nombre' => $request->name,
             'fecha_control' => $request->date,
-            'estado' => $request->state,
+            'estado' => 1,
             'TIPO_BODEGA_id' => $request->type,
         ]);        
 

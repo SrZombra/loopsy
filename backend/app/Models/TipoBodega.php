@@ -9,6 +9,10 @@ class TipoBodega extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nombre',
+        'descripcion',
+    ];
 
     public function bodega(){
         return $this->belongsTo('App\Bodega', 'id', 'TIPO_BODEGA_id');

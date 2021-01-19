@@ -23,6 +23,13 @@ class Bodega extends Model
      */
     protected $primaryKey = 'id';
 
+    protected $fillable = [
+        'nombre',
+        'fecha_control',
+        'estado',
+        'TIPO_BODEGA_id',
+    ];
+
     protected $hidden = [
         'TIPO_BODEGA_id'
     ];

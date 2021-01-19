@@ -6,6 +6,7 @@ use App\Http\Controllers\CatalogoController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\BodegaController;
+use App\Http\Controllers\TipoBodegaController;
 
 Route::post('/NEUgbYOtO8DvjfEmfXHu', [UserController::class, 'authenticate']);
 
@@ -31,6 +32,11 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('/8hdNP4KTDz8IID5wbj53', [ CategoriaController::class, 'updateCategoria' ]);
     
     Route::get('/DVv7FIl5dM69C318bPgd', [ BodegaController::class, 'getBodegas' ]);
+    Route::post('/OpWBvwAe2XlXzGHBxUYm', [ BodegaController::class, 'createBodega' ]);
+    Route::post('/8KIwFdp91iYspwO5qRwF', [ BodegaController::class, 'updateBodega' ]);
+    Route::get('/sBJDf2vvKyyoSvHgukZt', [ TipoBodegaController::class, 'getTipoBodegas' ]);
+    Route::post('/y6dv62ZJzJEqRi0RbscK', [ TipoBodegaController::class, 'createTipoBodega' ]);
+    Route::post('/MnQtPGxNnC6Lx6zBmAPQ', [ TipoBodegaController::class, 'updateTipoBodega' ]);
 
     Route::get('/ctwSTeTSOHVOf0dfjfoi', [RolesController::class, 'getRoles']);
 });
