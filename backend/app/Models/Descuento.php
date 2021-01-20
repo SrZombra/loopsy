@@ -23,4 +23,17 @@ class Descuento extends Model
      */
     protected $primaryKey = 'id';
 
+    protected $fillable = [
+        'fecha_inicio', 'fecha_limite', 'porcentaje', 'capacidad'
+    ];
+
+    protected $attributes = [
+        'estado' => 1
+    ];
+
+    protected $casts = [
+        'fecha_inicio' => 'datetime:Y-m-d H:00:00',
+        'fecha_limite' => 'datetime:Y-m-d H:00:00',
+    ];
+
 }

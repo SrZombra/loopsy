@@ -7,6 +7,8 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\BodegaController;
 use App\Http\Controllers\TipoBodegaController;
+use App\Http\Controllers\UnidadMedidaController;
+use App\Http\Controllers\DescuentoController;
 
 Route::post('/NEUgbYOtO8DvjfEmfXHu', [UserController::class, 'authenticate']);
 
@@ -37,6 +39,14 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('/sBJDf2vvKyyoSvHgukZt', [ TipoBodegaController::class, 'getTipoBodegas' ]);
     Route::post('/y6dv62ZJzJEqRi0RbscK', [ TipoBodegaController::class, 'createTipoBodega' ]);
     Route::post('/MnQtPGxNnC6Lx6zBmAPQ', [ TipoBodegaController::class, 'updateTipoBodega' ]);
+    
+    Route::get('/wNmoc7rP0KRj6fd2B2kN', [ UnidadMedidaController::class, 'getUnidadesMedida' ]);
+    Route::post('/VxfoZt9idpn2XgwL38uW', [ UnidadMedidaController::class, 'createUnidadMedida' ]);
+    Route::post('/W92uYWaHaKim6uVU99A5', [ UnidadMedidaController::class, 'updateUnidadMedida' ]);
+    
+    Route::get('/ZXGpQ10kEGKY1ALr2rYL', [ DescuentoController::class, 'getDescuentos' ]);
+    Route::post('/8M5GZjFdU3LYS15c0yC4', [ DescuentoController::class, 'createDescuento' ]);
+    Route::post('/We3219m96llcObfAPaZW', [ DescuentoController::class, 'updateDescuento' ]);
 
     Route::get('/ctwSTeTSOHVOf0dfjfoi', [RolesController::class, 'getRoles']);
 });

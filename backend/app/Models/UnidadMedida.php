@@ -23,4 +23,8 @@ class UnidadMedida extends Model
      */
     protected $primaryKey = 'id';
 
+    protected $fillable = [
+        'nombre'
+    ];
+
 }
