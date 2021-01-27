@@ -53,7 +53,7 @@
             <mat-form-field appearance="outline" class="example-full-width">
                 <mat-label>Bodega</mat-label>
                 <mat-select formControlName="bodega" [compareWith]="compareSelect">
-                  <mat-option *ngFor="let bodega of basicData.bodegas" [value]="bodega">{{ bodega.direccion_bodega }}</mat-option>
+                  <mat-option *ngFor="let bodega of basicData.bodegas" [value]="bodega">{{ bodega.nombre }}</mat-option>
                 </mat-select>
             </mat-form-field>
             <br>
@@ -68,7 +68,7 @@
                 Volver
             </button>
         </form>
-        <h1>Imagenes del producto.</h1>
+        <h1 *ngIf="productForm.controls['id'].value">Imagenes del producto.</h1>
         <mat-carousel
             timings="250ms ease-in"
             [autoplay]="false"

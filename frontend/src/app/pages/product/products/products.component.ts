@@ -27,11 +27,11 @@ export class ProductsComponent implements OnInit {
   }
 
   public routesParameters: Routes[] = [
-    { name: 'Categorias', route: '/products' },
-    { name: 'Catalogos', route: '/products' },
-    { name: 'Bodegas', route: '/products' },
-    { name: 'Unidades medida', route: '/products' },
-    { name: 'Descuentos', route: '/products' },
+    { name: 'Categorias', route: '/categories' },
+    { name: 'Catalogos', route: '/catalogs' },
+    { name: 'Bodegas', route: '/cellar' },
+    { name: 'Unidades medida', route: '/measurement-units' },
+    { name: 'Descuentos', route: '/discounts' },
   ]
 
   displayedColumns: string[] = [

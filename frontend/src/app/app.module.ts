@@ -26,6 +26,11 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { UserFormComponent } from './pages/user/user-form/user-form.component';
 import { ProductsComponent } from './pages/product/products/products.component';
 import { ProductFormComponent } from './pages/product/product-form/product-form.component';
+import { CellarComponent } from './pages/product/parameters/cellar/cellar.component';
+import { CategoriesComponent } from './pages/product/parameters/categories/categories.component';
+import { CatalogsComponent } from './pages/product/parameters/catalogs/catalogs.component';
+import { DiscountsComponent } from './pages/product/parameters/discounts/discounts.component';
+import { MeasurementUnitsComponent } from './pages/product/parameters/measurement-units/measurement-units.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +41,12 @@ import { ProductFormComponent } from './pages/product/product-form/product-form.
     UsersComponent,
     UserFormComponent,
     ProductsComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    CellarComponent,
+    CategoriesComponent,
+    CatalogsComponent,
+    DiscountsComponent,
+    MeasurementUnitsComponent
   ],
   imports: [
     BrowserModule,
