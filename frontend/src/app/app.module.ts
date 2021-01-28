@@ -31,6 +31,7 @@ import { CategoriesComponent } from './pages/product/parameters/categories/categ
 import { CatalogsComponent } from './pages/product/parameters/catalogs/catalogs.component';
 import { DiscountsComponent } from './pages/product/parameters/discounts/discounts.component';
 import { MeasurementUnitsComponent } from './pages/product/parameters/measurement-units/measurement-units.component';
+import { CategorieFormComponent } from './pages/product/parameters/categories/categorie-form/categorie-form.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MeasurementUnitsComponent } from './pages/product/parameters/measuremen
     CategoriesComponent,
     CatalogsComponent,
     DiscountsComponent,
-    MeasurementUnitsComponent
+    MeasurementUnitsComponent,
+    CategorieFormComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>{{ title }}</h1>
+<div mat-dialog-content>
+  <form action="" [formGroup]="formCategorie">
+        <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="name" placeholder="Nombre" autocomplete="off">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" [disabled]="!formCategorie.valid" (click)="submit()">Guardar</button>
+  </form>
+</div>
