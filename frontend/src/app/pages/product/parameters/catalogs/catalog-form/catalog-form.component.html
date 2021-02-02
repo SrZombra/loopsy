@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>{{ title }}</h1>
+<div mat-dialog-content>
+  <form action="" [formGroup]="formCatalog">
+        <p>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Nombre</mat-label>
+                <input matInput formControlName="name" placeholder="Nombre" autocomplete="off">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Descripción</mat-label>
+                <input matInput formControlName="description" placeholder="Descripcion" autocomplete="off">
+            </mat-form-field>
+        </p>
+        <br>
+        <button mat-raised-button color="primary" [disabled]="!formCatalog.valid" (click)="submit()">Guardar</button>
+  </form>
+</div>

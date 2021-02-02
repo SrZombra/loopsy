@@ -32,6 +32,7 @@ import { CatalogsComponent } from './pages/product/parameters/catalogs/catalogs.
 import { DiscountsComponent } from './pages/product/parameters/discounts/discounts.component';
 import { MeasurementUnitsComponent } from './pages/product/parameters/measurement-units/measurement-units.component';
 import { CategorieFormComponent } from './pages/product/parameters/categories/categorie-form/categorie-form.component';
+import { CatalogFormComponent } from './pages/product/parameters/catalogs/catalog-form/catalog-form.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { CategorieFormComponent } from './pages/product/parameters/categories/ca
     CatalogsComponent,
     DiscountsComponent,
     MeasurementUnitsComponent,
-    CategorieFormComponent
+    CategorieFormComponent,
+    CatalogFormComponent
   ],
   imports: [
     BrowserModule,

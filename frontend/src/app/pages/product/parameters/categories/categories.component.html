@@ -8,6 +8,7 @@
             <mat-label>Filtrar</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Ejemplo: Joe Sierra" #input>
         </mat-form-field>
+        <button mat-raised-button color="" style="float: right;" routerLink="/products">Volver</button>
         <button mat-raised-button color="primary" style="float: right;" (click)="openDialog(null)">Agregar Nuevo</button>
         <table mat-table #table [dataSource]="dataSource" matSort>
             <ng-container matColumnDef="id_categoria">
