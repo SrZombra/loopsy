@@ -29,7 +29,7 @@ export class ProductsComponent implements OnInit {
   public routesParameters: Routes[] = [
     { name: 'Categorias', route: '/categories' },
     { name: 'Catalogos', route: '/catalogs' },
-    { name: 'Bodegas', route: '/cellar' },
+    { name: 'Bodegas', route: '/cellars' },
     { name: 'Unidades medida', route: '/measurement-units' },
     { name: 'Descuentos', route: '/discounts' },
   ]

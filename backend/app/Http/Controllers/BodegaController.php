@@ -25,7 +25,7 @@ class BodegaController extends Controller
             'nombre' => $request->name,
             'fecha_control' => $request->date,
             'estado' => 1,
-            'TIPO_BODEGA_id' => $request->type,
+            'TIPO_BODEGA_id' => $request->type['id'],
         ]);        
 
         return response()->json($data, 201);
@@ -42,7 +42,7 @@ class BodegaController extends Controller
         $bodega->nombre = $request->name;
         $bodega->fecha_control = $request->date;
         $bodega->estado = $request->state;
-        $bodega->TIPO_BODEGA_id = $request->type;
+        $bodega->TIPO_BODEGA_id = $request->type['id'];
 
         $bodega->save();
 

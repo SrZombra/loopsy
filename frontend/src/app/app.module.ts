@@ -22,17 +22,18 @@ import { LoginComponent } from './pages/login/login.component';
 import { UsersComponent } from './pages/users/users/users.component';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { NgIdleKeepaliveModule } from '@ng-idle/keepalive'; // this includes the core NgIdleModule but includes keepalive providers for easy wireup
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HashLocationStrategy, LocationStrategy, DatePipe } from '@angular/common';
 import { UserFormComponent } from './pages/user/user-form/user-form.component';
 import { ProductsComponent } from './pages/product/products/products.component';
 import { ProductFormComponent } from './pages/product/product-form/product-form.component';
-import { CellarComponent } from './pages/product/parameters/cellar/cellar.component';
 import { CategoriesComponent } from './pages/product/parameters/categories/categories.component';
 import { CatalogsComponent } from './pages/product/parameters/catalogs/catalogs.component';
 import { DiscountsComponent } from './pages/product/parameters/discounts/discounts.component';
 import { MeasurementUnitsComponent } from './pages/product/parameters/measurement-units/measurement-units.component';
 import { CategorieFormComponent } from './pages/product/parameters/categories/categorie-form/categorie-form.component';
 import { CatalogFormComponent } from './pages/product/parameters/catalogs/catalog-form/catalog-form.component';
+import { CellarsComponent } from './pages/product/parameters/cellars/cellars.component';
+import { CellarsFormComponent } from './pages/product/parameters/cellars/cellars-form/cellars-form.component';
 
 @NgModule({
   declarations: [
@@ -44,13 +45,14 @@ import { CatalogFormComponent } from './pages/product/parameters/catalogs/catalo
     UserFormComponent,
     ProductsComponent,
     ProductFormComponent,
-    CellarComponent,
     CategoriesComponent,
     CatalogsComponent,
     DiscountsComponent,
     MeasurementUnitsComponent,
     CategorieFormComponent,
-    CatalogFormComponent
+    CatalogFormComponent,
+    CellarsComponent,
+    CellarsFormComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,7 @@ import { CatalogFormComponent } from './pages/product/parameters/catalogs/catalo
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
     { provide: LocationStrategy, useClass: HashLocationStrategy },
-    JwtHelperService,
+    JwtHelperService, DatePipe,
   ],
   bootstrap: [AppComponent]
 })

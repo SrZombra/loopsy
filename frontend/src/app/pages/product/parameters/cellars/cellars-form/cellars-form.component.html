@@ -1,0 +1,31 @@
+<h1 mat-dialog-title>{{ title }}</h1>
+<div mat-dialog-content>
+  <form action="" [formGroup]="formCellar">
+        <p>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Nombre</mat-label>
+                <input matInput formControlName="name" placeholder="Nombre" autocomplete="off">
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Input disabled</mat-label>
+                <input matInput [matDatepicker]="dp3" formControlName="date">
+                <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+                <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+              </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline" class="example-full-width">
+                <mat-label>Tipo de Bodega</mat-label>
+                <mat-select placeholder="Placeholder" formControlName="type" name="item" [compareWith]="compareSelect">
+                    <mat-option *ngFor="let typeCellar of typeCellars" [value]="typeCellar">
+                        {{typeCellar.nombre}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </p>
+        <br>
+        <button mat-raised-button color="primary" [disabled]="!formCellar.valid" (click)="submit()">Guardar</button>
+  </form>
+</div>

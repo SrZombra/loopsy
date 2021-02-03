@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Cellar } from 'src/app/models/cellar/cellar';
 import { url } from 'src/app/services/baseUrl';
 import { TokenService } from 'src/app/token/token.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -23,16 +24,16 @@ export class CellarsService {
     }
   }
 
-  public loadCellar(){
-    return this.http.get<Cellar[]>(`${this.baseUrl}/VlaDKnSloeQf1OZ5T8VI`, this.setHeader());
+  public loadCellars(): Observable<Cellar[]>{
+    return this.http.get<Cellar[]>(`${this.baseUrl}/DVv7FIl5dM69C318bPgd`, this.setHeader());
   }
 
-  public updateCellar(data: Cellar){
-    return this.http.post<Cellar>(`${this.baseUrl}/OmXQy8ACoUZEK6CDFWzI`, data, this.setHeader());
+  public updateCellar(data: Cellar): Observable<Cellar>{
+    return this.http.post<Cellar>(`${this.baseUrl}/8KIwFdp91iYspwO5qRwF`, data, this.setHeader());
   }
 
-  public createCellar(data: Cellar){
-    return this.http.post<Cellar>(`${this.baseUrl}/shsabfGoSXsVg88PKRr7`, data, this.setHeader());
+  public createCellar(data: Cellar): Observable<Cellar>{
+    return this.http.post<Cellar>(`${this.baseUrl}/OpWBvwAe2XlXzGHBxUYm`, data, this.setHeader());
   }
 
 }
