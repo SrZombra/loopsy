@@ -34,6 +34,7 @@ import { CategorieFormComponent } from './pages/product/parameters/categories/ca
 import { CatalogFormComponent } from './pages/product/parameters/catalogs/catalog-form/catalog-form.component';
 import { CellarsComponent } from './pages/product/parameters/cellars/cellars.component';
 import { CellarsFormComponent } from './pages/product/parameters/cellars/cellars-form/cellars-form.component';
+import { DiscountsFormComponent } from './pages/product/parameters/discounts/discounts-form/discounts-form.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { CellarsFormComponent } from './pages/product/parameters/cellars/cellars
     CategorieFormComponent,
     CatalogFormComponent,
     CellarsComponent,
-    CellarsFormComponent
+    CellarsFormComponent,
+    DiscountsFormComponent
   ],
   imports: [
     BrowserModule,
