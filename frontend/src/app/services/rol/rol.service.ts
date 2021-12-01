@@ -24,7 +24,7 @@ export class RolService {
   }
 
   public loadRoles(){
-    return this.http.get<RolModule[]>(`${this.baseUrl.url}/ctwSTeTSOHVOf0dfjfoi`, this.setHeader());
+    return this.http.get<RolModule[]>(`${this.baseUrl.url}/rol`, this.setHeader());
   }
 
 }

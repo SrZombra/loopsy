@@ -117,14 +117,14 @@ export class ProductFormComponent implements OnInit {
   }
 
   sendCreateProduct(){
-    this.ProductService.createProduct(this.formsend).subscribe(
+    this.ProductService.createProduct(this.productForm.value).subscribe(
       data => this.handleResponseCreate(),
       err => this.Swal.error(err)
     );
   }
 
   sendUpdateProduct(){
-    this.ProductService.updateProducto(this.formsend).subscribe(
+    this.ProductService.updateProducto(this.productForm.value).subscribe(
       data => this.handleResponseUpdate(),
       err => this.Swal.error(err)
     );

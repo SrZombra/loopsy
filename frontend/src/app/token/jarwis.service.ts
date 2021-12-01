@@ -13,7 +13,7 @@ export class JarwisService {
   constructor(private http: HttpClient) { }
 
   login(data) {
-    return this.http.post(`${this.baseUrl}/NEUgbYOtO8DvjfEmfXHu`, data);
+    return this.http.post(`${this.baseUrl}/login`, data);
   }
 
 }

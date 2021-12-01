@@ -24,7 +24,7 @@ export class TypeCellarsService {
   }
 
   public loadTypeCellars(){
-    return this.http.get<TypeCellar[]>(`${this.baseUrl}/sBJDf2vvKyyoSvHgukZt`, this.setHeader());
+    return this.http.get<TypeCellar[]>(`${this.baseUrl}/tipo-bodega`, this.setHeader());
   }
   
 }

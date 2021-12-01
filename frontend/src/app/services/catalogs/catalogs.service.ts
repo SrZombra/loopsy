@@ -24,15 +24,15 @@ export class CatalogsService {
   }
 
   public loadCatalogs(){
-    return this.http.get<Catalog[]>(`${this.baseUrl}/VlaDKnSloeQf1OZ5T8VI`, this.setHeader());
+    return this.http.get<Catalog[]>(`${this.baseUrl}/catalogo`, this.setHeader());
   }
 
   public updateCatalog(data: Catalog){
-    return this.http.post<Catalog>(`${this.baseUrl}/OmXQy8ACoUZEK6CDFWzI`, data, this.setHeader());
+    return this.http.put<Catalog>(`${this.baseUrl}/catalogo`, data, this.setHeader());
   }
 
   public createCatalog(data: Catalog){
-    return this.http.post<Catalog>(`${this.baseUrl}/shsabfGoSXsVg88PKRr7`, data, this.setHeader());
+    return this.http.post<Catalog>(`${this.baseUrl}/catalogo`, data, this.setHeader());
   }
 
 }

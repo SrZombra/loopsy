@@ -25,15 +25,15 @@ export class DiscountsService {
   }
 
   public loadDiscounts(): Observable<Discount[]>{
-    return this.http.get<Discount[]>(`${this.baseUrl}/ZXGpQ10kEGKY1ALr2rYL`, this.setHeader());
+    return this.http.get<Discount[]>(`${this.baseUrl}/descuento`, this.setHeader());
   }
 
   public updateDiscount(data: Discount): Observable<Discount>{
-    return this.http.post<Discount>(`${this.baseUrl}/We3219m96llcObfAPaZW`, data, this.setHeader());
+    return this.http.put<Discount>(`${this.baseUrl}/descuento`, data, this.setHeader());
   }
 
   public createDiscount(data: Discount): Observable<Discount>{
-    return this.http.post<Discount>(`${this.baseUrl}/8M5GZjFdU3LYS15c0yC4`, data, this.setHeader());
+    return this.http.post<Discount>(`${this.baseUrl}/descuento`, data, this.setHeader());
   }
 
 }

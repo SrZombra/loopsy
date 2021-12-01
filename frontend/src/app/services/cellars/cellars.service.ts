@@ -25,15 +25,15 @@ export class CellarsService {
   }
 
   public loadCellars(): Observable<Cellar[]>{
-    return this.http.get<Cellar[]>(`${this.baseUrl}/DVv7FIl5dM69C318bPgd`, this.setHeader());
+    return this.http.get<Cellar[]>(`${this.baseUrl}/bodega`, this.setHeader());
   }
 
   public updateCellar(data: Cellar): Observable<Cellar>{
-    return this.http.post<Cellar>(`${this.baseUrl}/8KIwFdp91iYspwO5qRwF`, data, this.setHeader());
+    return this.http.put<Cellar>(`${this.baseUrl}/bodega`, data, this.setHeader());
   }
 
   public createCellar(data: Cellar): Observable<Cellar>{
-    return this.http.post<Cellar>(`${this.baseUrl}/OpWBvwAe2XlXzGHBxUYm`, data, this.setHeader());
+    return this.http.post<Cellar>(`${this.baseUrl}/bodega`, data, this.setHeader());
   }
 
 }

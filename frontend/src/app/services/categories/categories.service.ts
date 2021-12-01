@@ -24,15 +24,15 @@ export class CategoriesService {
   }
 
   public loadCategories(){
-    return this.http.get<Categorie[]>(`${this.baseUrl.url}/X6QE0A9pOy9NvfKqEPK8`, this.setHeader());
+    return this.http.get<Categorie[]>(`${this.baseUrl.url}/categoria`, this.setHeader());
   }
 
   public updateCategorie(data: Categorie){
-    return this.http.post<Categorie>(`${this.baseUrl.url}/8hdNP4KTDz8IID5wbj53`, data, this.setHeader());
+    return this.http.put<Categorie>(`${this.baseUrl.url}/categoria`, data, this.setHeader());
   }
 
   public createCategorie(data: Categorie){
-    return this.http.post<Categorie>(`${this.baseUrl.url}/g1SuieMPJ8VC5xdhKgRG`, data, this.setHeader());
+    return this.http.post<Categorie>(`${this.baseUrl.url}/categoria`, data, this.setHeader());
   }
   
 }

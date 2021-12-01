@@ -24,19 +24,19 @@ export class UserApiService {
   }
 
   public loadUsers(){
-    return this.http.get<UserModule[]>(`${this.baseUrl.url}/Ck0kehv5POItIh6WbEdL`, this.setHeader());
+    return this.http.get<UserModule[]>(`${this.baseUrl.url}/user`, this.setHeader());
   }
 
   public addUser(data){
-    return this.http.post<UserModule>(`${this.baseUrl.url}/vuzjzJ7mrGkVeA9EZeFU`, data, this.setHeader());
+    return this.http.post<UserModule>(`${this.baseUrl.url}/user`, data, this.setHeader());
   }
 
   public updateUser(data){
-    return this.http.put<UserModule>(`${this.baseUrl.url}/QQRtedhtQkRkChCVVdJh`, data, this.setHeader());
+    return this.http.put<UserModule>(`${this.baseUrl.url}/user`, data, this.setHeader());
   }
 
   public getUser(data){
-    return this.http.post<UserModule>(`${this.baseUrl.url}/LNABeNawAZSxrt7smflR`, data, this.setHeader());
+    return this.http.post<UserModule>(`${this.baseUrl.url}/user/id`, data, this.setHeader());
   }
 
 }

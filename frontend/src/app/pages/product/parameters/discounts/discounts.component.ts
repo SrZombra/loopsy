@@ -31,8 +31,9 @@ export class DiscountsComponent implements OnInit {
     this.dataSource = new MatTableDataSource(this.data);
   }
 
+  // priemra funcion que se ejecuta al cargar el componente
   ngOnInit(): void {
-    this.loadCategories();
+    this.loadDiscounts();
   }
 
   ngAfterViewInit() {
@@ -49,7 +50,7 @@ export class DiscountsComponent implements OnInit {
     }
   }
 
-  loadCategories(): void{
+  loadDiscounts(): void{
     this.SwalService.loading();
     this.CellarsService.loadDiscounts().subscribe(
       data => this.handleResponse(data),
@@ -68,7 +69,7 @@ export class DiscountsComponent implements OnInit {
       data: element
     });
     dialogRef.afterClosed().subscribe(() => {
-      this.loadCategories();
+      this.loadDiscounts();
     });
     
   }

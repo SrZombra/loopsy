@@ -25,28 +25,28 @@ export class ProductsService {
   }
 
   public loadProduct(data: ProductsModule){
-    return this.http.post<ProductsModule>(`${this.baseUrl.url}/QGL2hflAN8PnDl1AX75t`, data, this.setHeader());
+    return this.http.post<ProductsModule>(`${this.baseUrl.url}/product/id`, data, this.setHeader());
   }
 
   public loadProducts(){
-    return this.http.get<ProductsModule[]>(`${this.baseUrl.url}/Dx5muDeFg3JicHbFuRMU`, this.setHeader());
+    return this.http.get<ProductsModule[]>(`${this.baseUrl.url}/product`, this.setHeader());
   }
 
   public loadBasicData(){
-    return this.http.get(`${this.baseUrl.url}/kCRDuPRcMY8FhuGeReSQ`, this.setHeader());
+    return this.http.get(`${this.baseUrl.url}/product/basic-data`, this.setHeader());
   }
 
   public createProduct(data){
-    return this.http.post(`${this.baseUrl.url}/c180tfxoLcWRTeYVRQpY`, data, this.setHeader());
+    return this.http.post(`${this.baseUrl.url}/product`, data, this.setHeader());
   }
 
   public updateProducto(data){
-    return this.http.post(`${this.baseUrl.url}/A6EAKJzdf4cmgrP0o0zN`, data, this.setHeader());
+    return this.http.put(`${this.baseUrl.url}/product`, data, this.setHeader());
   }
 
   
   public deleteImage(Image: Image){
-    return this.http.post(`${this.baseUrl.url}/eetcVaoyhbeUUTKlgukm`, Image, this.setHeader());
+    return this.http.post(`${this.baseUrl.url}/product`, Image, this.setHeader());
   }
 
 }

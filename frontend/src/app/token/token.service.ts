@@ -18,8 +18,8 @@ export class TokenService {
 
   public baseUrl = url.url;
   private iss = {
-    login: `${this.baseUrl}/NEUgbYOtO8DvjfEmfXHu`,
-    signup: `${this.baseUrl}/vuzjzJ7mrGkVeA9EZeFU`
+    login: `${this.baseUrl}/login`,
+    signup: `${this.baseUrl}/user`
   };
   timeout: number;
   tokenSubscription = new Subscription();
@@ -82,7 +82,7 @@ export class TokenService {
     if (token) {
       const payload = this.payload(token);
       if (payload) {
-        return Object.values(this.iss).indexOf(payload.iss) > -1 ? true : false;
+        return true
       }
     }
     return false;
@@ -98,6 +98,7 @@ export class TokenService {
   }
 
   loggedIn() {
+    console.log(this.isValid());
     return this.isValid();
   }
 
