@@ -27,7 +27,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('/product/basic-data/', [ProductoController::class, 'basicData']);
     Route::post('/product', [ProductoController::class, 'createProduct']);
     Route::post('/product/id', [ProductoController::class, 'getProduct']);
-    Route::post('/product', [ProductoController::class, 'updateProduct']);
+    Route::put('/product', [ProductoController::class, 'updateProduct']);
     Route::post('/product/delete/image', [ProductoController::class, 'deleteProductImage']);
 
     Route::get('/catalogo', [ CatalogoController::class, 'getCatalogos' ]);

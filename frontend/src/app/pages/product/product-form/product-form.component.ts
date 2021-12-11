@@ -26,7 +26,7 @@ export class ProductFormComponent implements OnInit {
     descuentos: [],
     unidades_medida: [],
   }
-  public formsend = new FormData();
+  public formsend: any = {};
 
   public productForm: FormGroup = new FormGroup({
     id: new FormControl(''),
@@ -108,23 +108,24 @@ export class ProductFormComponent implements OnInit {
 
   submitProduct(){
     this.Swal.loading();
-    this.formsend = new FormData();
-    for (var i = 0; i < this.myFiles.length; i++) { 
-      this.formsend.append("photos[]", this.myFiles[i]);
-    }
+    // this.formsend = new FormData();
+    // for (var i = 0; i < this.myFiles.length; i++) { 
+    //   this.formsend.append("photos[]", this.myFiles[i]);
+    // }
     this.setFormSend();
     this.productForm.controls['id'].value ? this.sendUpdateProduct() : this.sendCreateProduct();
   }
 
   sendCreateProduct(){
-    this.ProductService.createProduct(this.productForm.value).subscribe(
+    this.ProductService.createProduct(this.formsend).subscribe(
       data => this.handleResponseCreate(),
       err => this.Swal.error(err)
     );
   }
 
   sendUpdateProduct(){
-    this.ProductService.updateProducto(this.productForm.value).subscribe(
+    console.log(this.formsend);
+    this.ProductService.updateProducto(this.formsend).subscribe(
       data => this.handleResponseUpdate(),
       err => this.Swal.error(err)
     );
@@ -144,17 +145,17 @@ export class ProductFormComponent implements OnInit {
   }
 
   setFormSend(){
-    this.formsend.append("id", this.productForm.value.id);
-    this.formsend.append("nombre_producto", this.productForm.value.nombre_producto);
-    this.formsend.append("dato_medida", this.productForm.value.dato_medida);
-    this.formsend.append("precio_unitario", this.productForm.value.precio_unitario);
-    this.formsend.append("cantidad", this.productForm.value.cantidad);
-    this.formsend.append("descripcion", this.productForm.value.descripcion);
-    this.formsend.append("bodega", this.productForm.value.bodega.id);
-    this.formsend.append("catalogo", this.productForm.value.catalogo.id);
-    this.formsend.append("categoria", this.productForm.value.categoria.id_categoria);
-    this.formsend.append("descuento", this.productForm.value.descuento.id);
-    this.formsend.append("unidad_medida", this.productForm.value.unidad_medida.id);
+    this.formsend.id = this.productForm.value.id;
+    this.formsend.nombre_producto = this.productForm.value.nombre_producto;
+    this.formsend.dato_medida = this.productForm.value.dato_medida;
+    this.formsend.precio_unitario = this.productForm.value.precio_unitario;
+    this.formsend.cantidad = this.productForm.value.cantidad;
+    this.formsend.descripcion = this.productForm.value.descripcion;
+    this.formsend.bodega = this.productForm.value.bodega.id;
+    this.formsend.catalogo = this.productForm.value.catalogo.id;
+    this.formsend.categoria = this.productForm.value.categoria.id_categoria;
+    this.formsend.descuento = this.productForm.value.descuento.id;
+    this.formsend.unidad_medida = this.productForm.value.unidad_medida.id;
   }
 
   loadImage(fileInput){
