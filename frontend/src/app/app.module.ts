@@ -35,6 +35,7 @@ import { CatalogFormComponent } from './pages/product/parameters/catalogs/catalo
 import { CellarsComponent } from './pages/product/parameters/cellars/cellars.component';
 import { CellarsFormComponent } from './pages/product/parameters/cellars/cellars-form/cellars-form.component';
 import { DiscountsFormComponent } from './pages/product/parameters/discounts/discounts-form/discounts-form.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { DiscountsFormComponent } from './pages/product/parameters/discounts/dis
     CatalogFormComponent,
     CellarsComponent,
     CellarsFormComponent,
-    DiscountsFormComponent
+    DiscountsFormComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

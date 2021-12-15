@@ -13,6 +13,7 @@ import { CategoriesComponent } from './pages/product/parameters/categories/categ
 import { DiscountsComponent } from './pages/product/parameters/discounts/discounts.component';
 import { MeasurementUnitsComponent } from './pages/product/parameters/measurement-units/measurement-units.component';
 import { CellarsComponent } from './pages/product/parameters/cellars/cellars.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AfterLoginService] },
@@ -30,6 +31,7 @@ const routes: Routes = [
     { path: 'categories', component: CategoriesComponent, canActivate: [AfterLoginService] },
     { path: 'discounts', component: DiscountsComponent, canActivate: [AfterLoginService] },
     { path: 'measurement-units', component: MeasurementUnitsComponent, canActivate: [AfterLoginService] },
+    { path: 'dashboard', component: DashboardComponent, canActivate: [AfterLoginService] }
 
 
 ];
